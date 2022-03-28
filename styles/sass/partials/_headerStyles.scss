@@ -1,9 +1,76 @@
 .flexContainer {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo {
-  font-family: $secondaryFont;
-  letter-spacing: 1px;
-  line-height: 50px;
+header {
+  padding: 5px 0;
+  border-bottom: 1px solid $secondary;
+
+  .logo {
+    font-family: $secondaryFont;
+    letter-spacing: 1.5px;
+    line-height: 50px;
+    flex-basis: 30%;
+  }
+
+  .navList {
+    display: flex;
+    align-items: center;
+
+    li {
+      padding-left: 20px;
+    }
+
+    .imgBtn {
+      height: 30px;
+      width: 30px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .navIcon {
+      font-size: 25px;
+    }
+  }
+}
+
+.searchBar {
+  position: relative;
+  flex-basis: 30%;
+
+  input {
+    padding: 10px;
+    background-color: $secondary;
+    border: none;
+    border-radius: 8px;
+    width: 95%;
+
+    &::placeholder {
+      padding-left: 30px;
+      color: grey;
+      font-weight: 100;
+    }
+  }
+
+  .searchIcon {
+    padding: 0 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 11px;
+
+    .searchMagnifyer {
+      color: grey;
+    }
+  }
+}
+
+button {
+  padding: 0;
 }

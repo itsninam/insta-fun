@@ -30,44 +30,56 @@
           <div class="searchBar" role="search">
             <label for="search" class="sr-only">Search</label>
             <input type="search" id="search" placeholder="Search" />
-            <button aria-label="search">
-              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <button aria-label="search" class="searchIcon">
+              <i
+                class="fa-solid fa-magnifying-glass searchMagnifyer"
+                aria-hidden="true"
+              ></i>
             </button>
           </div>
-          <nav class="navLinks">
-            <ul>
+          <nav class="navBar">
+            <ul class="navList">
               <li>
                 <a href="#home">
-                  <i class="fa-solid fa-house" aria-hidden="true"></i>
+                  <i class="fa-solid fa-house navIcon" aria-hidden="true"></i>
                   <span class="sr-only">Link to home page</span>
                 </a>
               </li>
               <li>
                 <a href="">
-                  <i class="fa-regular fa-message" aria-hidden="true"></i>
+                  <i
+                    class="fa-regular fa-message navIcon"
+                    aria-hidden="true"
+                  ></i>
                   <span class="sr-only">Link to messages</span>
                 </a>
               </li>
               <li>
                 <a href=""
-                  ><i class="fa-regular fa-square-plus" aria-hidden="true"></i
+                  ><i
+                    class="fa-regular fa-square-plus navIcon"
+                    aria-hidden="true"
+                  ></i
                 ></a>
                 <span class="sr-only">Create new post</span>
               </li>
               <li>
                 <a href="">
-                  <i class="fa-regular fa-square-caret-right"></i>
+                  <i class="fa-regular fa-square-caret-right navIcon"></i>
                 </a>
                 <span class="sr-only">Go to explore page</span>
               </li>
               <li>
                 <button aria-label="likes">
-                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                  <i class="fa-regular fa-heart navIcon" aria-hidden="true"></i>
                 </button>
               </li>
               <li>
-                <button aria-label="settings">
-                  <img src="" alt="" />
+                <button class="imgBtn" aria-label="settings">
+                  <img
+                    src="http://placekitten.com/100/100"
+                    alt="Profile photo"
+                  />
                 </button>
               </li>
             </ul>
