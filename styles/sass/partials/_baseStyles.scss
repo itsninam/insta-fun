@@ -1,6 +1,6 @@
 .wrapper {
-  max-width: 1200px;
-  width: 65%;
+  max-width: 1400px;
+  width: 950px;
   margin: 0 auto;
 }
 
@@ -8,4 +8,8 @@ img {
   max-width: 100%;
   display: block;
   height: auto;
+}
+
+body {
+  background-color: $secondary;
 }
