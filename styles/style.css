@@ -443,13 +443,13 @@ section {
 .stories {
   background-color: #fff;
   border: 1px solid #d6d6d6;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   width: 65%;
 }
 .stories .imgContainer {
-  height: 70px;
-  width: 70px;
+  height: 63px;
+  width: 63px;
   margin-bottom: 5px;
 }
 .stories .imgContainer img {
@@ -464,11 +464,11 @@ section {
 
 .postContainer {
   border: 1px solid #d6d6d6;
+  background-color: #fff;
 }
 .postContainer .userInfo {
-  background-color: #fff;
+  padding: 5px 15px;
   border-bottom: 1px solid #d6d6d6;
-  padding: 10px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -488,8 +488,8 @@ section {
           align-items: center;
 }
 .postContainer .userInfo .userImg .imgContainer {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -504,10 +504,30 @@ section {
 .postContainer .userInfo .userImg p {
   font-weight: 500;
 }
+.postContainer .userInfo .postIcon {
+  font-size: 1.5rem;
+}
+
+.postSettings {
+  padding: 5px 15px;
+  margin-top: 10px;
+}
+.postSettings .postLikes {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.postSettings .postComments span {
+  font-weight: 500;
+}
+.postSettings .timePosted {
+  margin: 10px 0 10px 0;
+  text-transform: uppercase;
+  color: grey;
+  font-size: 1rem;
+}
 
 .postIcons {
   background-color: #fff;
-  padding: 10px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -517,8 +537,56 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 10px;
 }
 .postIcons .postIcon {
   font-size: 2.3rem;
   padding-right: 15px;
+}
+
+.addComment {
+  border-top: 1px solid #d6d6d6;
+  padding: 10px 0;
+}
+.addComment form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.addComment form .emoticonsIcon {
+  font-size: 2rem;
+  padding: 0 5px;
+}
+
+textarea {
+  width: 85%;
+  border: none;
+  resize: none;
+  height: 30px;
+  line-height: 25px;
+}
+textarea::-webkit-input-placeholder {
+  line-height: 25px;
+}
+textarea::-moz-placeholder {
+  line-height: 25px;
+}
+textarea:-ms-input-placeholder {
+  line-height: 25px;
+}
+textarea::-ms-input-placeholder {
+  line-height: 25px;
+}
+textarea::placeholder {
+  line-height: 25px;
 }

@@ -6,13 +6,13 @@ section {
 .stories {
   background-color: #fff;
   border: 1px solid $lightgrey;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   width: 65%;
 
   .imgContainer {
-    height: 70px;
-    width: 70px;
+    height: 63px;
+    width: 63px;
     margin-bottom: 5px;
 
     img {
@@ -30,11 +30,11 @@ section {
 
 .postContainer {
   border: 1px solid $lightgrey;
+  background-color: #fff;
 
   .userInfo {
-    background-color: #fff;
+    padding: 5px 15px;
     border-bottom: 1px solid $lightgrey;
-    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,8 +44,8 @@ section {
       align-items: center;
 
       .imgContainer {
-        height: 50px;
-        width: 50px;
+        height: 45px;
+        width: 45px;
         display: flex;
         align-items: center;
         padding-right: 10px;
@@ -59,18 +59,72 @@ section {
         font-weight: 500;
       }
     }
+
+    .postIcon {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.postSettings {
+  padding: 5px 15px;
+  margin-top: 10px;
+
+  .postLikes {
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .postComments span {
+    font-weight: 500;
+  }
+
+  .timePosted {
+    margin: 10px 0 10px 0;
+    text-transform: uppercase;
+    color: grey;
+    font-size: 1rem;
   }
 }
 
 .postIcons {
   background-color: #fff;
-  padding: 10px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 
   .postIcon {
     font-size: 2.3rem;
     padding-right: 15px;
+  }
+}
+
+.addComment {
+  border-top: 1px solid $lightgrey;
+  padding: 10px 0;
+
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .emoticonsIcon {
+      font-size: 2rem;
+      padding: 0 5px;
+    }
+  }
+}
+
+textarea {
+  width: 85%;
+  border: none;
+  resize: none;
+  height: 30px;
+  line-height: 25px;
+
+  &::placeholder {
+    line-height: 25px;
   }
 }
