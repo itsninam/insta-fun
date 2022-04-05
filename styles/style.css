@@ -316,7 +316,7 @@ img {
 }
 
 body {
-  background-color: #efefef;
+  background-color: rgb(239, 239, 239);
 }
 
 .flexContainer {
@@ -333,7 +333,7 @@ body {
 
 header {
   padding: 5px 0;
-  border-bottom: 1px solid #d6d6d6;
+  border-bottom: 1px solid rgb(214, 214, 214);
   margin-bottom: 25px;
   background-color: #fff;
 }
@@ -373,7 +373,7 @@ header .navList .navIcon {
 }
 .searchBar input {
   padding: 10px;
-  background-color: #efefef;
+  background-color: rgb(239, 239, 239);
   border: none;
   border-radius: 8px;
   width: 95%;
@@ -442,33 +442,35 @@ section {
 
 .stories {
   background-color: #fff;
-  border: 1px solid #d6d6d6;
-  padding: 10px;
+  border: 1px solid rgb(214, 214, 214);
+  padding: 15px;
   text-align: center;
   width: 65%;
 }
-.stories .imgContainer {
-  height: 63px;
-  width: 63px;
-  margin-bottom: 5px;
-}
 .stories .imgContainer img {
+  margin-bottom: 5px;
   border-radius: 50%;
   padding: 3px;
   border: 2px solid red;
 }
 
 .posts {
-  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 2px solid green;
 }
 
 .postContainer {
-  border: 1px solid #d6d6d6;
+  border: 1px solid rgb(214, 214, 214);
   background-color: #fff;
 }
 .postContainer .userInfo {
   padding: 5px 15px;
-  border-bottom: 1px solid #d6d6d6;
+  border-bottom: 1px solid rgb(214, 214, 214);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -545,7 +547,7 @@ section {
 }
 
 .addComment {
-  border-top: 1px solid #d6d6d6;
+  border-top: 1px solid rgb(214, 214, 214);
   padding: 10px 0;
 }
 .addComment form {
@@ -589,4 +591,8 @@ textarea::-ms-input-placeholder {
 }
 textarea::placeholder {
   line-height: 25px;
+}
+
+.sidebar {
+  width: 20%;
 }

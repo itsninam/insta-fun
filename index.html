@@ -94,61 +94,8 @@
     <main class="wrapper">
       <!-- stories section starts here -->
       <section class="stories">
-        <div class="flexContainer">
-          <div class="storyContent">
-            <button class="imgContainer">
-              <img
-                src="http://placekitten.com/100/100"
-                alt="Profile picture of user"
-              />
-            </button>
-            <p>name</p>
-          </div>
-          <div class="storyContent">
-            <button class="imgContainer">
-              <img
-                src="http://placekitten.com/100/100"
-                alt="Profile picture of user"
-              />
-            </button>
-            <p>name</p>
-          </div>
-          <div class="storyContent">
-            <button class="imgContainer">
-              <img
-                src="http://placekitten.com/100/100"
-                alt="Profile picture of user"
-              />
-            </button>
-            <p>name</p>
-          </div>
-          <div class="storyContent">
-            <button class="imgContainer">
-              <img
-                src="http://placekitten.com/100/100"
-                alt="Profile picture of user"
-              />
-            </button>
-            <p>name</p>
-          </div>
-          <div class="storyContent">
-            <button class="imgContainer">
-              <img
-                src="http://placekitten.com/100/100"
-                alt="Profile picture of user"
-              />
-            </button>
-            <p>name</p>
-          </div>
-          <div class="storyContent">
-            <button class="imgContainer">
-              <img
-                src="http://placekitten.com/100/100"
-                alt="Profile picture of user"
-              />
-            </button>
-            <p>name</p>
-          </div>
+        <div class="storyContent flexContainer">
+          <!-- API data -->
         </div>
       </section>
       <!-- stories section ends here -->
@@ -156,7 +103,7 @@
       <!-- user posts starts here -->
       <section class="posts">
         <div class="postContainer">
-          <div class="userInfo">
+          <!-- <div class="userInfo">
             <a href="#" class="userImg">
               <div class="imgContainer">
                 <img
@@ -175,7 +122,8 @@
               src="https://source.unsplash.com/random/614×458"
               alt="user's post"
             />
-          </div>
+          </div> -->
+
           <div class="postSettings">
             <div class="postIcons">
               <div class="leftIcons">
@@ -198,11 +146,6 @@
                   ></i>
                 </button>
               </div>
-              <!-- <div class="morePhotos">
-                <button aria-label="see more photos">
-                  <i class="fa-solid fa-ellipsis postIcon" aria-hidden="true"></i>
-                </button>
-              </div> -->
               <div class="bookmark">
                 <button aria-label="bookmark post">
                   <i class="fa-regular fa-bookmark postIcon"></i>
@@ -237,9 +180,24 @@
             </div>
           </div>
         </div>
+
+        <aside class="sidebar">
+          <div class="userProfile flexContainer">
+            <a href="#">
+              <img src="http://placekitten.com/100/100" alt="Profile photo" />
+              <div class="userName">
+                <a href="#">username</a>
+                <p>Name</p>
+              </div>
+            </a>
+          </div>
+        </aside>
       </section>
       <!-- user posts ends here -->
     </main>
     <!-- main ends here -->
+
+    <!-- link to js -->
+    <script src="./app.js"></script>
   </body>
 </html>
