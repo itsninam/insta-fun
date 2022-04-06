@@ -1,10 +1,15 @@
 const instaApp = {};
 
+instaApp.randomHour = () => {
+  return Math.floor(Math.random() * 12) + 1;
+};
+
 instaApp.getData = () => {
-  const url = new URL("https://api.unsplash.com/photos/random");
+  const url = new URL("https://api.unsplash.com/photos/random/");
   url.search = new URLSearchParams({
     client_id: "XWzFPYvrb6ZVb9IOR8msCNBb1fbfUkD-9i6DxYYRDNA",
     count: 7,
+    orientation: "squarish",
   });
 
   fetch(url)
@@ -22,11 +27,11 @@ instaApp.displayData = (photos) => {
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("imgContainer");
     imgContainer.innerHTML = `
-    <button>
+    <a href="${photo.user.links.html}" target="_blank" rel="noopener">
     <img src=${photo.user.profile_image.medium} alt=Photo of ${
       photo.user.username
     }/>
-    </button>
+    </a>
     <p> ${photo.user.username.substring(0, 8)}...</p>
 `;
 
@@ -42,7 +47,9 @@ instaApp.displayData = (photos) => {
       <a href="#" class="userImg">
         <div class="imgContainer">
           <img
-            src=${photo.user.profile_image.medium} alt=Photo of ${photo.user.username}
+            src=${photo.user.profile_image.medium} alt=Photo of ${
+      photo.user.username
+    }
           />
         </div>
         <p>${photo.user.username}</p>
@@ -56,19 +63,79 @@ instaApp.displayData = (photos) => {
       src=${photo.urls.regular} alt=${photo.alt_description}
       />
    </div>
+
+   <div class="postSettings">
+   <div class="postIcons">
+     <div class="leftIcons">
+       <button aria-label="like photo">
+         <i
+           class="fa-regular fa-heart postIcon"
+           aria-hidden="true"
+         ></i>
+       </button>
+       <button aria-label="leave a comment">
+         <i
+           class="fa-regular fa-comment postIcon"
+           aria-hidden="true"
+         ></i>
+       </button>
+       <button aria-label="send to other user">
+         <i
+           class="fa-regular fa-paper-plane postIcon"
+           aria-hidden="true"
+         ></i>
+       </button>
+     </div>
+     <div class="bookmark">
+       <button aria-label="bookmark post">
+         <i class="fa-regular fa-bookmark postIcon"></i>
+       </button>
+     </div>
+   </div>
+   <div class="postLikes">
+     <p>${photo.likes} likes</p>
+   </div>
+   <div class="postComments">
+     <p>
+       <span>${photo.user.username}</span> ${photo.description}
+     </p>
+   </div>
+   <div class="timePosted">
+     <p> ${instaApp.randomHour()} hours ago</p>
+   </div>
+   <div class="addComment">
+     <form action="">
+       <button aria-label="emoticons">
+         <i class="fa-regular fa-face-smile emoticonsIcon"></i>
+       </button>
+       <label for="postComment" class="sr-only">Add a comment</label>
+       <textarea
+         name="postComment"
+         id="postComment"
+         placeholder="Add a comment..."
+       ></textarea>
+       <button>Post</button>
+     </form>
+   </div>
+ </div>
+   
     `;
 
     const postContainer = document.querySelector(".postContainer");
-    const postSettings = document.querySelector(".postSettings");
-    postContainer.prepend(userPost);
+    postContainer.appendChild(userPost);
   });
 };
 
-const allPost = document.querySelectorAll(".userPost");
-console.log(allPost);
+const heartIcon = document.querySelector(".postContainer");
+heartIcon.addEventListener("click", (event) => {
+  if (event.target.classList[1] === "fa-heart") {
+    event.target.classList.toggle("fa-solid");
+    event.target.classList.toggle("liked");
+  }
+});
 
 instaApp.init = () => {
   instaApp.getData();
 };
 
-// instaApp.init();
+instaApp.init();

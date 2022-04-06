@@ -445,7 +445,6 @@ section {
   border: 1px solid rgb(214, 214, 214);
   padding: 15px;
   text-align: center;
-  width: 65%;
 }
 .stories .imgContainer img {
   margin-bottom: 5px;
@@ -454,19 +453,25 @@ section {
   border: 2px solid red;
 }
 
-.posts {
+.mainSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 2px solid green;
+}
+.mainSection .storiesPosts {
+  width: 70%;
+}
+.mainSection .sidebar {
+  width: 25%;
 }
 
-.postContainer {
-  border: 1px solid rgb(214, 214, 214);
+.postContainer .userPost {
   background-color: #fff;
+  margin-bottom: 30px;
+  border: 1px solid rgb(214, 214, 214);
 }
 .postContainer .userInfo {
   padding: 5px 15px;
@@ -508,6 +513,10 @@ section {
 }
 .postContainer .userInfo .postIcon {
   font-size: 1.5rem;
+}
+
+.liked {
+  color: red;
 }
 
 .postSettings {
