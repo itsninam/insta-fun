@@ -93,7 +93,7 @@ instaApp.displayData = (photos) => {
      </div>
    </div>
    <div class="postLikes">
-     <p>${photo.likes} likes</p>
+     <p class="like">${photo.likes} likes</p>
    </div>
    <div class="postComments">
      <p>
@@ -126,16 +126,37 @@ instaApp.displayData = (photos) => {
   });
 };
 
-const heartIcon = document.querySelector(".postContainer");
-heartIcon.addEventListener("click", (event) => {
-  if (event.target.classList[1] === "fa-heart") {
-    event.target.classList.toggle("fa-solid");
-    event.target.classList.toggle("liked");
-  }
-});
+instaApp.updateLikes = () => {
+  const heartIcon = document.querySelector(".postContainer");
+
+  heartIcon.addEventListener("click", (event) => {
+    const hearts = document.querySelectorAll(".fa-heart");
+    hearts.forEach((heart) => {
+      if (event.target.classList[1] === "fa-heart") {
+        event.target.classList.toggle("fa-solid");
+        event.target.classList.toggle("liked");
+
+        const likes = document.querySelectorAll(".postLikes");
+
+        likes.forEach((like) => {
+          const num = like.innerText.substring(0, 3);
+          console.log(num);
+          if (event.target.classList[3] === "fa-solid") {
+            const addOne = parseInt(num) + 1;
+            like.innerText = `${addOne} likes`;
+          } else {
+            const addOne = parseInt(num) - 1;
+            like.innerText = `${addOne} likes`;
+          }
+        });
+      }
+    });
+  });
+};
 
 instaApp.init = () => {
   instaApp.getData();
+  instaApp.updateLikes();
 };
 
 instaApp.init();
