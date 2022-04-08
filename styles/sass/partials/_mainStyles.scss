@@ -28,10 +28,12 @@ section {
 
   .storiesPosts {
     width: 70%;
+    margin-right: 30px;
   }
 
   .sidebar {
-    width: 25%;
+    width: 35%;
+    padding: 15px 0;
   }
 }
 
@@ -142,13 +144,65 @@ textarea {
     line-height: 25px;
   }
 }
+
 .sidebar {
-  width: 15%;
-  border: 2px solid yellow;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
 
   .imgContainer {
+    height: 65px;
+    width: 65px;
+
     img {
       border-radius: 50%;
+    }
+  }
+
+  .userName {
+    flex-basis: 55%;
+
+    a,
+    p {
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    p {
+      color: grey;
+    }
+  }
+
+  .switch {
+    a {
+      font-weight: 500;
+      color: $blue;
+    }
+  }
+}
+
+.suggestedContainer {
+  margin-top: 10px;
+
+  .suggested {
+    padding: 20px 0;
+
+    h2 {
+      font-size: 1.5rem;
+      letter-spacing: 0.3px;
+      color: grey;
+    }
+
+    a {
+      font-weight: 500;
+      color: $primary;
+    }
+  }
+
+  .userSuggestions {
+    .imgContainer {
+      height: 35px;
+      width: 35px;
     }
   }
 }

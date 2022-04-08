@@ -336,6 +336,8 @@ header {
   border-bottom: 1px solid rgb(214, 214, 214);
   margin-bottom: 25px;
   background-color: #fff;
+  position: sticky;
+  top: 0;
 }
 header .logo {
   font-family: "Grand Hotel", cursive;
@@ -463,9 +465,11 @@ section {
 }
 .mainSection .storiesPosts {
   width: 70%;
+  margin-right: 30px;
 }
 .mainSection .sidebar {
-  width: 25%;
+  width: 35%;
+  padding: 15px 0;
 }
 
 .postContainer .userPost {
@@ -603,9 +607,51 @@ textarea::placeholder {
 }
 
 .sidebar {
-  width: 15%;
-  border: 2px solid yellow;
+  position: sticky;
+  top: 100px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+.sidebar .imgContainer {
+  height: 65px;
+  width: 65px;
 }
 .sidebar .imgContainer img {
   border-radius: 50%;
+}
+.sidebar .userName {
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
+}
+.sidebar .userName a,
+.sidebar .userName p {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+.sidebar .userName p {
+  color: grey;
+}
+.sidebar .switch a {
+  font-weight: 500;
+  color: rgb(0, 142, 250);
+}
+
+.suggestedContainer {
+  margin-top: 10px;
+}
+.suggestedContainer .suggested {
+  padding: 20px 0;
+}
+.suggestedContainer .suggested h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.3px;
+  color: grey;
+}
+.suggestedContainer .suggested a {
+  font-weight: 500;
+  color: #262626;
+}
+.suggestedContainer .userSuggestions .imgContainer {
+  height: 35px;
+  width: 35px;
 }

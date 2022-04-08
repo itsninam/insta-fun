@@ -9,6 +9,8 @@ header {
   border-bottom: 1px solid $lightgrey;
   margin-bottom: 25px;
   background-color: #fff;
+  position: sticky;
+  top: 0;
 
   .logo {
     font-family: $secondaryFont;
