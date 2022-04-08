@@ -13,9 +13,22 @@ instaApp.getData = () => {
   });
 
   fetch(url)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        response.json();
+      } else {
+        throw new Error(response.statusText);
+      }
+    })
     .then((data) => {
       instaApp.displayData(data);
+    })
+    .catch((err) => {
+      if (err.message === "Not found ") {
+        console.log("Not found", err);
+      } else {
+        console.log("Something went wrong", err);
+      }
     });
 };
 
