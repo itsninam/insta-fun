@@ -3,37 +3,27 @@ section {
 }
 
 //stories section starts here
-.stories {
-  background-color: #fff;
-  border: 1px solid $lightgrey;
-  padding: 15px;
-  text-align: center;
-  // width: 65%;
+.storiesPosts {
+  width: 95%;
 
-  .imgContainer {
-    img {
-      margin-bottom: 5px;
-      border-radius: 50%;
-      padding: 3px;
-      border: 2px solid red;
+  .stories {
+    background-color: #fff;
+    border: 1px solid $lightgrey;
+    padding: 15px;
+    text-align: center;
+    // width: 65%;
+
+    .imgContainer {
+      img {
+        margin-bottom: 5px;
+        border-radius: 50%;
+        padding: 3px;
+        border: 2px solid red;
+      }
     }
   }
 }
 //stories section ends here
-
-//user post starts here
-.mainSection {
-  display: flex;
-  justify-content: space-between;
-
-  .storiesPosts {
-    width: 70%;
-  }
-
-  .sidebar {
-    width: 25%;
-  }
-}
 
 .postContainer {
   .userPost {
@@ -142,13 +132,100 @@ textarea {
     line-height: 25px;
   }
 }
-.sidebar {
-  width: 15%;
-  border: 2px solid yellow;
 
-  .imgContainer {
-    img {
-      border-radius: 50%;
+footer {
+  align-self: flex-start;
+  position: sticky;
+  top: 120px;
+  right: 0;
+  width: 45%;
+
+  .sidebar {
+    // position: sticky;
+    // top: 100px;
+    // align-self: flex-start;
+
+    .imgContainer {
+      height: 65px;
+      width: 65px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .userName {
+      flex-basis: 55%;
+
+      a,
+      p {
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+
+      p {
+        color: grey;
+      }
+    }
+
+    .switch {
+      a {
+        font-weight: 500;
+        color: $blue;
+      }
+    }
+  }
+
+  .suggestedContainer {
+    margin-top: 10px;
+
+    .suggested {
+      padding: 20px 0;
+
+      h2 {
+        font-size: 1.5rem;
+        letter-spacing: 0.3px;
+        color: grey;
+      }
+
+      a {
+        font-weight: 500;
+        color: $primary;
+      }
+    }
+
+    .userSuggestions {
+      .imgContainer {
+        height: 35px;
+        width: 35px;
+      }
+    }
+  }
+
+  nav {
+    margin: 25px 0;
+
+    .footerNav {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    a {
+      font-size: 1.2rem;
+      color: grey;
+
+      &::after {
+        content: " • ";
+      }
+    }
+  }
+
+  .copyright {
+    p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: grey;
+      text-transform: uppercase;
     }
   }
 }
