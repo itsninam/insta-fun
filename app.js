@@ -22,6 +22,7 @@ instaApp.getData = () => {
     })
     .then((data) => {
       instaApp.displayData(data);
+      instaApp.suggestions(data);
     })
     .catch((err) => {
       if (err.message === "Not Found") {
@@ -34,8 +35,6 @@ instaApp.getData = () => {
 
 instaApp.displayData = (photos) => {
   photos.forEach((photo) => {
-    console.log(photo);
-
     //story
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("imgContainer");
@@ -131,11 +130,35 @@ instaApp.displayData = (photos) => {
      </form>
    </div>
  </div>
-   
     `;
-
     const postContainer = document.querySelector(".postContainer");
     postContainer.appendChild(userPost);
+  });
+};
+
+instaApp.suggestions = (suggestions) => {
+  suggestions.slice(-5).forEach((suggestion) => {
+    const suggestions = document.createElement("a");
+    suggestions.classList.add("userImg");
+    suggestions.innerHTML = `
+              <div class="flexContainer">
+                <div class="imgContainer">
+                  <img
+                  src=${suggestion.user.profile_image.medium} alt=Photo of ${suggestion.user.username}
+                  />
+                </div>
+                <div class="userName">
+                  <a href="#">${suggestion.user.username}</a>
+                  <p>Followed by ${suggestion.user.username}</p>
+                </div>
+                <div class="switch">
+                  <a href="#">Follow</a>
+                </div>
+              </div>
+    `;
+
+    const suggestionsContainer = document.querySelector(".userSuggestions");
+    suggestionsContainer.appendChild(suggestions);
   });
 };
 

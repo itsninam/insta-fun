@@ -306,7 +306,7 @@ button {
 
 .wrapper {
   max-width: 1400px;
-  width: 950px;
+  width: 1050px;
   margin: 0 auto;
 }
 
@@ -444,7 +444,7 @@ section {
 }
 
 .storiesPosts {
-  width: 95%;
+  width: 97%;
 }
 .storiesPosts .stories {
   background-color: #fff;
@@ -599,7 +599,8 @@ footer {
   position: sticky;
   top: 120px;
   right: 0;
-  width: 45%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 footer .sidebar .imgContainer {
   height: 65px;
@@ -639,30 +640,33 @@ footer .suggestedContainer .suggested a {
   font-weight: 500;
   color: #262626;
 }
+footer .suggestedContainer .userSuggestions .flexContainer {
+  margin: 10px 0;
+}
 footer .suggestedContainer .userSuggestions .imgContainer {
   height: 35px;
   width: 35px;
 }
 footer nav {
-  margin: 25px 0;
+  margin: 40px 0;
 }
 footer nav .footerNav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
-footer nav a {
-  font-size: 1.2rem;
+footer nav li::after {
+  content: "•";
   color: grey;
 }
-footer nav a::after {
-  content: " • ";
+footer nav a {
+  font-size: 1.3rem;
+  color: grey;
+  padding: 0 5px;
 }
 footer .copyright p {
   font-size: 1.3rem;
+  letter-spacing: 0.3px;
   font-weight: 500;
   color: grey;
   text-transform: uppercase;

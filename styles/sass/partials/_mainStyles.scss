@@ -4,14 +4,13 @@ section {
 
 //stories section starts here
 .storiesPosts {
-  width: 95%;
+  width: 97%;
 
   .stories {
     background-color: #fff;
     border: 1px solid $lightgrey;
     padding: 15px;
     text-align: center;
-    // width: 65%;
 
     .imgContainer {
       img {
@@ -138,13 +137,9 @@ footer {
   position: sticky;
   top: 120px;
   right: 0;
-  width: 45%;
+  flex-basis: 50%;
 
   .sidebar {
-    // position: sticky;
-    // top: 100px;
-    // align-self: flex-start;
-
     .imgContainer {
       height: 65px;
       width: 65px;
@@ -195,6 +190,10 @@ footer {
     }
 
     .userSuggestions {
+      .flexContainer {
+        margin: 10px 0;
+      }
+
       .imgContainer {
         height: 35px;
         width: 35px;
@@ -203,26 +202,30 @@ footer {
   }
 
   nav {
-    margin: 25px 0;
+    margin: 40px 0;
 
     .footerNav {
       display: flex;
-      justify-content: space-between;
+    }
+
+    li {
+      &::after {
+        content: "•";
+        color: grey;
+      }
     }
 
     a {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: grey;
-
-      &::after {
-        content: " • ";
-      }
+      padding: 0 5px;
     }
   }
 
   .copyright {
     p {
       font-size: 1.3rem;
+      letter-spacing: 0.3px;
       font-weight: 500;
       color: grey;
       text-transform: uppercase;
