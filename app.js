@@ -15,7 +15,7 @@ instaApp.getData = () => {
   fetch(url)
     .then((response) => {
       if (response.ok) {
-        response.json();
+        return response.json();
       } else {
         throw new Error(response.statusText);
       }
@@ -24,10 +24,10 @@ instaApp.getData = () => {
       instaApp.displayData(data);
     })
     .catch((err) => {
-      if (err.message === "Not found ") {
-        console.log("Not found", err);
+      if (err.message === "Not Found") {
+        console.log("Not found");
       } else {
-        console.log("Something went wrong", err);
+        console.log("Something went wrong");
       }
     });
 };
@@ -143,27 +143,24 @@ instaApp.updateLikes = () => {
   const heartIcon = document.querySelector(".postContainer");
 
   heartIcon.addEventListener("click", (event) => {
-    const hearts = document.querySelectorAll(".fa-heart");
-    hearts.forEach((heart) => {
-      if (event.target.classList[1] === "fa-heart") {
-        event.target.classList.toggle("fa-solid");
-        event.target.classList.toggle("liked");
+    if (event.target.classList[1] === "fa-heart") {
+      event.target.classList.toggle("fa-solid");
+      event.target.classList.toggle("liked");
 
-        const likes = document.querySelectorAll(".postLikes");
+      const likes = document.querySelectorAll(".postLikes");
 
-        likes.forEach((like) => {
-          const num = like.innerText.substring(0, 3);
-          console.log(num);
-          if (event.target.classList[3] === "fa-solid") {
-            const addOne = parseInt(num) + 1;
-            like.innerText = `${addOne} likes`;
-          } else {
-            const addOne = parseInt(num) - 1;
-            like.innerText = `${addOne} likes`;
-          }
-        });
-      }
-    });
+      likes.forEach((like) => {
+        const num = like.innerText.substring(0, 3);
+        console.log(num);
+        if (event.target.classList[3] === "fa-solid") {
+          const addOne = parseInt(num) + 1;
+          like.innerText = `${addOne} likes`;
+        } else {
+          const addOne = parseInt(num) - 1;
+          like.innerText = `${addOne} likes`;
+        }
+      });
+    }
   });
 };
 
