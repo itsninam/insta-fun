@@ -12,6 +12,10 @@ instaApp.getData = () => {
     orientation: "squarish",
   });
 
+  const body = document.querySelector("body");
+  const errorText = document.createElement("h2");
+  errorText.classList.add("errorText");
+
   fetch(url)
     .then((response) => {
       if (response.ok) {
@@ -27,8 +31,14 @@ instaApp.getData = () => {
     .catch((err) => {
       if (err.message === "Not Found") {
         console.log("Not found");
+        body.innerHTML = "";
+        errorText.innerText = "Data Not Found. Please try again later";
+        body.appendChild(errorText);
       } else {
         console.log("Something went wrong");
+        body.innerHTML = "";
+        errorText.innerText = "Something went wrong. Please try again later";
+        body.appendChild(errorText);
       }
     });
 };
@@ -38,6 +48,7 @@ instaApp.displayData = (photos) => {
     //story
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("imgContainer");
+
     imgContainer.innerHTML = `
     <a href="${photo.user.links.html}" target="_blank" rel="noopener">
     <img src=${photo.user.profile_image.medium} alt=Photo of ${
@@ -126,7 +137,11 @@ instaApp.displayData = (photos) => {
          id="postComment"
          placeholder="Add a comment..."
        ></textarea>
-       <button>Post</button>
+       <div class="commentButtons">
+          <button> ❤️ </button>
+          <button> 🙌  </button>
+          <button> ⨁ </button>
+       </div>
      </form>
    </div>
  </div>
@@ -138,14 +153,16 @@ instaApp.displayData = (photos) => {
 
 instaApp.suggestions = (suggestions) => {
   suggestions.slice(-5).forEach((suggestion) => {
-    const suggestions = document.createElement("a");
+    const suggestions = document.createElement("div");
     suggestions.classList.add("userImg");
     suggestions.innerHTML = `
               <div class="flexContainer">
                 <div class="imgContainer">
+                <a href="#">
                   <img
                   src=${suggestion.user.profile_image.medium} alt=Photo of ${suggestion.user.username}
                   />
+                </a>
                 </div>
                 <div class="userName">
                   <a href="#">${suggestion.user.username}</a>
@@ -171,10 +188,8 @@ instaApp.updateLikes = () => {
       event.target.classList.toggle("liked");
 
       const likes = document.querySelectorAll(".postLikes");
-
       likes.forEach((like) => {
         const num = like.innerText.substring(0, 3);
-        console.log(num);
         if (event.target.classList[3] === "fa-solid") {
           const addOne = parseInt(num) + 1;
           like.innerText = `${addOne} likes`;
@@ -187,9 +202,48 @@ instaApp.updateLikes = () => {
   });
 };
 
+instaApp.mediaQueries = () => {
+  const mediaQuery = window.matchMedia("(max-width: 600px)");
+  const child = document.querySelector(".storyContent").childNodes;
+
+  mediaQuery.addEventListener("change", () => {
+    if (mediaQuery.matches) {
+      child[8].style.display = "none";
+      child[9].style.display = "none";
+      console.log("below 600");
+    } else {
+      child[8].style.display = "block";
+      child[9].style.display = "block";
+      console.log("above 600");
+    }
+  });
+};
+
+instaApp.mobile = () => {
+  const mediaQuery = window.matchMedia("(max-width: 600px)");
+
+  const child = document.querySelector(".storyContent");
+  child.addEventListener("click", (event) => {
+    console.log(event.target.childNodes);
+  });
+  // console.log(child.childNodes[8]);
+
+  // if (mediaQuery.matches && e.target.classList[8] === "imgContainer") {
+  //   child[8].style.display = "none";
+  //   child[9].style.display = "none";
+  //   console.log("below 600");
+  // } else {
+  //   child[8].style.display = "block";
+  //   child[9].style.display = "block";
+  //   console.log("above 600");
+  // }
+};
+
 instaApp.init = () => {
   instaApp.getData();
   instaApp.updateLikes();
+  instaApp.mediaQueries();
+  instaApp.mobile();
 };
 
 instaApp.init();
