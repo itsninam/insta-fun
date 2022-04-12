@@ -463,7 +463,7 @@ button {
 @media (max-width: 420px) {
   header,
 .stories {
-    width: 450px;
+    width: 422px;
   }
 
   .posts .postContainer .userPost {
