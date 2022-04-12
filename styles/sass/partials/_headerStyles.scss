@@ -80,14 +80,54 @@ button {
 }
 
 //media queries
-@media (max-width: 1000px) {
+
+@media (max-width: 1100px) {
   .wrapper {
-    width: 95%;
+    width: 700px;
+  }
+
+  footer {
+    display: none;
   }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 700px) {
+  header {
+    margin-bottom: 0;
+  }
+
   .searchBar {
     display: none;
+  }
+
+  .wrapper {
+    width: 99%;
+    margin: 0 auto;
+
+    .storiesPosts {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  header,
+  .stories {
+    width: 450px;
+  }
+
+  .posts {
+    .postContainer {
+      .userPost {
+        margin-bottom: 0px;
+        border: none;
+      }
+    }
+  }
+
+  .postSettings {
+    .addComment {
+      border-top: none;
+    }
   }
 }
