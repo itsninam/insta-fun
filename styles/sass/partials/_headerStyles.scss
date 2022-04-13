@@ -17,6 +17,7 @@ header {
     letter-spacing: 1.5px;
     line-height: 50px;
     flex-basis: 30%;
+    padding: 0 5px;
   }
 
   .navList {
@@ -52,9 +53,9 @@ header {
     border: none;
     border-radius: 8px;
     width: 95%;
+    text-indent: 25px;
 
     &::placeholder {
-      padding-left: 30px;
       color: grey;
       font-weight: 300;
     }
@@ -77,57 +78,4 @@ header {
 
 button {
   padding: 0;
-}
-
-//media queries
-
-@media (max-width: 1100px) {
-  .wrapper {
-    width: 700px;
-  }
-
-  footer {
-    display: none;
-  }
-}
-
-@media (max-width: 700px) {
-  header {
-    margin-bottom: 0;
-  }
-
-  .searchBar {
-    display: none;
-  }
-
-  .wrapper {
-    width: 99%;
-    margin: 0 auto;
-
-    .storiesPosts {
-      margin-right: 0;
-    }
-  }
-}
-
-@media (max-width: 420px) {
-  header,
-  .stories {
-    width: 450px;
-  }
-
-  .posts {
-    .postContainer {
-      .userPost {
-        margin-bottom: 0px;
-        border: none;
-      }
-    }
-  }
-
-  .postSettings {
-    .addComment {
-      border-top: none;
-    }
-  }
 }
