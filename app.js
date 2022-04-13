@@ -44,7 +44,7 @@ instaApp.getData = () => {
 };
 
 instaApp.displayData = (photos) => {
-  photos.forEach((photo) => {
+  photos.slice(-8).forEach((photo) => {
     //story
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("imgContainer");
@@ -219,31 +219,10 @@ instaApp.mediaQueries = () => {
   });
 };
 
-instaApp.mobile = () => {
-  const mediaQuery = window.matchMedia("(max-width: 600px)");
-
-  const child = document.querySelector(".storyContent");
-  child.addEventListener("click", (event) => {
-    console.log(event.target.childNodes);
-  });
-  // console.log(child.childNodes[8]);
-
-  // if (mediaQuery.matches && e.target.classList[8] === "imgContainer") {
-  //   child[8].style.display = "none";
-  //   child[9].style.display = "none";
-  //   console.log("below 600");
-  // } else {
-  //   child[8].style.display = "block";
-  //   child[9].style.display = "block";
-  //   console.log("above 600");
-  // }
-};
-
 instaApp.init = () => {
   instaApp.getData();
   instaApp.updateLikes();
   instaApp.mediaQueries();
-  instaApp.mobile();
 };
 
 instaApp.init();
