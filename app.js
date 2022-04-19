@@ -8,7 +8,7 @@ instaApp.getData = () => {
   const url = new URL("https://api.unsplash.com/photos/random/");
   url.search = new URLSearchParams({
     client_id: "XWzFPYvrb6ZVb9IOR8msCNBb1fbfUkD-9i6DxYYRDNA",
-    count: 7,
+    count: 30,
     orientation: "squarish",
   });
 
@@ -210,11 +210,9 @@ instaApp.mediaQueries = () => {
     if (mediaQuery.matches) {
       child[8].style.display = "none";
       child[9].style.display = "none";
-      console.log("below 600");
     } else {
       child[8].style.display = "block";
       child[9].style.display = "block";
-      console.log("above 600");
     }
   });
 };
