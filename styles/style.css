@@ -325,6 +325,10 @@ body {
   text-align: center;
 }
 
+i {
+  color: black;
+}
+
 .flexContainer {
   display: -webkit-box;
   display: -ms-flexbox;
